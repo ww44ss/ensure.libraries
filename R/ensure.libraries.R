@@ -38,22 +38,24 @@ ensure.libraries <- function(packages.to.install = "tidyverse", verbose = FALSE)
     ## inventory of already installed add-on packages
     pkgs.on.machine <- installed.packages()[,1] 
 
-    for (pkg in packages.to.install){
+    for (pkg.long in packages.to.install){
+        
+        pkg <- gsub(".*\\/", "", pkg.long)
         
         if (verbose == TRUE) cat(pkg, "\n")
         if (!pkg %in% pkgs.on.machine){ 
             ## make sure package on machine
-            if(!grepl("/", pkg)) install.packages(pkg, repos = "http://cran.rstudio.com") ## normal install
+            if(!grepl("/", pkg.long)) install.packages(pkg, repos = "http://cran.rstudio.com") ## normal install
             ## if a "/" present in package name, assume it is a development install.
-            if(grepl("/", pkg)) {
+            if(grepl("/", pkg.long)) {
                 ## devtools install, assumes github repo source
                 if (!devtools %in% pkgs.on.machine) install.packages(devtools) ## check for devtools
                 library(devtools)
-                install.packages(devtools::install_github(pkg))
+                install.packages(devtools::install_github(pkg.long))
             }
             
         }
-        library(gsub(".*\\/", "", pkg), character.only = TRUE)
+        library(pkg, character.only = TRUE)
         
     }
     
