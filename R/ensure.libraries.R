@@ -53,7 +53,7 @@ ensure.libraries <- function(packages.to.install = "tidyverse", verbose = FALSE)
             }
             
         }
-        library(pkg, character.only = TRUE)
+        library(gsub(".*\\/", "", pkg), character.only = TRUE)
         
     }
     
