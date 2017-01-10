@@ -2,13 +2,12 @@
 % Please edit documentation in R/ensure.libraries.R
 \name{ensure}
 \alias{ensure}
-\title{ensure installs librarys and also checks for installed packages
-and installs them if not already locally available.}
+\title{Ensure that package libraries are installed and available.}
 \usage{
 ensure(packages.to.install = "tidyverse", verbose = FALSE)
 }
 \arguments{
-\item{packages.to.install}{- a vector containing names of packages to install}
+\item{packages.to.install}{- a vector containing names of add-on packages to install}
 
 \item{verbose}{- a TRUE/FALSE value for verbose operation}
 }
@@ -16,30 +15,25 @@ ensure(packages.to.install = "tidyverse", verbose = FALSE)
 messages from library installs
 }
 \description{
-ensure installs librarys and also checks for installed packages
-and installs them if not already locally available.
+Loads and attaches add-on packages. If the package is not present locally 
+the package is installed from the CRAN repo.
 }
 \examples{
 ## simple installation of packages
 ##
-## require devtools to install package. 
-## then create a vector containing the names of needed packages. 
+## note that devtools needed to install package from github
  
-library(devtools)
-github_install("ww44ss/ensure.libraries")
+library(devtools).
+install_github("ww44ss/ensure.libraries")
 
-packages.needed <- c( 
-                             "tidyverse",
-                             "gglot2",
-                             "stringr",
-                             "ww44ss/yo"
-                           )
+packages <- c("tidyverse",
+              "ggplot2",
+              "stringr",
+              "ww44ss/yo"
+              )
 
-ensure.libraries(packages.needed)
-
-## can also use shorter form
-ensure(libraries.needed)
-
+ensure(packages)
+## end (not run)
 }
 \keyword{packages}
 

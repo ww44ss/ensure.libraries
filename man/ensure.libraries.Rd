@@ -2,7 +2,7 @@
 % Please edit documentation in R/ensure.libraries.R
 \name{ensure.libraries}
 \alias{ensure.libraries}
-\title{ensure package libraries are installed and available.}
+\title{Ensure that package libraries are installed and available.}
 \usage{
 ensure.libraries(packages.to.install = "tidyverse", verbose = FALSE)
 }
@@ -15,30 +15,30 @@ ensure.libraries(packages.to.install = "tidyverse", verbose = FALSE)
 messages from library installs
 }
 \description{
-ensure.library installs libraries and also checks for installed packages
-and installs them if not already locally available.
+Loads and attaches add-on packages. If the package is not present locally 
+the package is installed from the CRAN repo.
 }
 \examples{
-## simple installation of packages
+## simple installation of add-on packages
 ##
 ## require devtools to install package. 
-## then create a vector containing the names of needed packages. 
+
  
 library(devtools)
-github_install("ww44ss/ensure.libraries")
+install_github("ww44ss/ensure.libraries")
 
-packages.needed <- c( 
-                             "tidyverse",
-                             "gglot2",
-                             "stringr",
-                             "ww44ss/yo"
-                           )
+packages <- c("tidyverse",
+              "ggplot2",
+              "stringr",
+              "ww44ss/yo"
+              )
 
-ensure.libraries(packages.needed)
+ensure.libraries(packages)
 
 ## can also use shorter form
-ensure(libraries.needed)
+ensure(packages)
 
+## end (not run)
 }
 \keyword{packages}
 
