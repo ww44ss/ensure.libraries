@@ -16,7 +16,8 @@ messages from library installs
 }
 \description{
 Loads and attaches add-on packages. If the package is not present locally 
-the package is installed from the CRAN repo.
+the package is installed from the CRAN repo. This is useful in making code run 
+after new R installation or upon transfer to other machines.
 }
 \examples{
 ## simple installation of add-on packages
