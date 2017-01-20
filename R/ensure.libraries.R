@@ -66,7 +66,8 @@ ensure.libraries <- function(packages.to.install = "tidyverse", verbose = FALSE)
 #' Ensure that package libraries are installed and available.
 #'
 #' Loads and attaches add-on packages. If the package is not present locally 
-#' the package is installed from the CRAN repo. 
+#' the package is installed from the CRAN repo. This is useful in making code run 
+#' after new R installation or upon transfer to other machines.
 #'
 #' @param packages.to.install - a vector containing names of add-on packages to install
 #' @param verbose - a TRUE/FALSE value for verbose operation
