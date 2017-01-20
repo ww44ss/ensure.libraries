@@ -16,6 +16,7 @@
 #'  
 #' library(devtools)
 #' install_github("ww44ss/ensure.libraries")
+#' library(ensure.libraries)
 #' 
 #' packages <- c("tidyverse",
 #'               "ggplot2",
@@ -80,6 +81,7 @@ ensure.libraries <- function(packages.to.install = "tidyverse", verbose = FALSE)
 #'  
 #' library(devtools).
 #' install_github("ww44ss/ensure.libraries")
+#' library(ensure.libraries)
 #' 
 #' packages <- c("tidyverse",
 #'               "ggplot2",

@@ -27,6 +27,7 @@ after new R installation or upon transfer to other machines.
  
 library(devtools)
 install_github("ww44ss/ensure.libraries")
+library(ensure.libraries)
 
 packages <- c("tidyverse",
               "ggplot2",
